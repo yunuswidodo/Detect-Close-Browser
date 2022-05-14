@@ -9,12 +9,24 @@
 <body>
     <script>
         // not working
-        window.onbeforeunload = function() {
-            var msg = "are you sure to closing this website";
-            return msg;
-        }
-        // try with websocked
+        // window.onbeforeunload = function() {
+        //     var msg = "are you sure to closing this website";
+        //     return msg;
+        // }
+
+        //  not working
+        // addEventListener('unload', event => { 
+        //     confirm("Press a button!");
+        // });
         
+        // not working :V
+        window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
+
+        // try with websocked
+
     </script>
     <h1>trying detect close browser</h1>
 </body>
