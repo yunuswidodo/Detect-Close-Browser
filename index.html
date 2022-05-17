@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="nana">
+        <h1>trying detect close browser</h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         // not working
         // window.onbeforeunload = function() {
@@ -19,15 +23,80 @@
         //     confirm("Press a button!");
         // });
         
-        // not working :V
-        window.addEventListener('beforeunload', function (e) {
-      e.preventDefault();
-      e.returnValue = '';
-    });
 
+        // not working :V
+        // window.addEventListener('beforeunload', function (e) {
+        // e.preventDefault();
+        // e.returnValue = '';
+        // });
+
+        // not working 
+        // window.onbeforeunload = function () {
+        // return "Do you really want to close?";
+        // };
+
+        // not working
+        // window.onblur = function() {
+        //     confirm("Press a button!");
+        // };
+
+        // not working
+        // $('window').blur(function() {
+        //     confirm("Press a button!");
+        // });
+
+        // not working
+        // window.addEventListener('beforeunload', function (e) {
+        //     e.preventDefault();
+        //     e.returnValue = '';
+        // });
+
+        // not working ||
+        // window.addEventListener("beforeunload", function (e) {
+        // var confirmationMessage = "\o/";
+
+        // (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        // return confirmationMessage;                            //Webkit, Safari, Chrome
+        // });
+
+        // not working || working detect but after f12/inspect elmant
+        // var msg = "mesaage test ";
+        // window.onbeforeunload = function(e){  
+        //    return msg; //return not alert
+        // }
+
+        // working detect but after f12/inspect elmant
+        // window.onbeforeunload = function (e) {
+        //     e = e || window.event;
+
+        //     // For IE and Firefox prior to version 4
+        //     if (e) {
+        //         e.returnValue = 'Sure?';
+        //     }
+
+        //     // For Safari
+        //     return 'Sure?';
+        // };
+            
+        
+        // not working || 
+        // window.onunload = function(){
+        //     message("The window is closing now!");
+        // }
+
+        
+        // window.onbeforeunload = function() {
+        //     return "ssssddsadasd";
+        // }
+
+        // not working ||  working if clik anything in document
+        window.onbeforeunload = function(){
+			return 'here';
+		};
+        console.log("test ======== ");
         // try with websocked
 
     </script>
-    <h1>trying detect close browser</h1>
+    
 </body>
 </html>
