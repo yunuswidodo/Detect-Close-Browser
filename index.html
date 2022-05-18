@@ -90,12 +90,19 @@
         // }
 
         // not working ||  working if clik anything in document
-        window.onbeforeunload = function(){
-			return 'here';
-		};
+        // window.onbeforeunload = function(){
+		// 	return 'here';
+		// };
+
+        window.addEventListener("beforeunload", function(){ 
+            Logout();
+         });
+
         console.log("test ======== ");
         // try with websocked
-
+        function Logout(){
+            confirm("Press a button!");
+        }
     </script>
     
 </body>
