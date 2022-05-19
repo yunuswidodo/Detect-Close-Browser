@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test 20220519</h1>
+    <script>
+        // no work
+//         function goodbye(e) {
+//         if(!e) e = window.event;
+//         //e.cancelBubble is supported by IE - this will kill the bubbling process.
+//         e.cancelBubble = true;
+//         e.returnValue = 'You sure you want to leave?'; //This is displayed on the dialog
+
+//         //e.stopPropagation works in Firefox.
+//         if (e.stopPropagation) {
+//             e.stopPropagation();
+//             e.preventDefault();
+//         }
+//     }
+// window.onbeforeunload=goodbye;
+   
+// no work
+// function onBeforeUnload(e) {
+//     if (thereAreUnsavedChanges()) {
+//         e.preventDefault();
+//         e.returnValue = '';
+//         return;
+//     }
+
+//     delete e['returnValue'];
+// }
+
+// window.addEventListener('beforeunload', onBeforeUnload);
+
+
+
+
+$(window).bind('beforeunload', function(eventObject) {
+    var returnValue = undefined;
+    if (! inFormOrLink) {
+        returnValue = "Do you really want to close?";
+    }
+    eventObject.returnValue = returnValue;
+    return returnValue;
+}); 
+
+
+   // pakai ctr+w
+   // session 
+   sessionStorage.setItem("user-name", $("#userlogin").text());
+    let nameLoged = sessionStorage.getItem("user-name");
+    console.log(nameLoged);
+
+    </script>
+</body>
+</html>
